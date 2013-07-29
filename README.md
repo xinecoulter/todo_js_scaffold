@@ -4,9 +4,9 @@ The goal of this lab is to build a simple client side JavaScript todo applicatio
 
 #####Application structure
 
-This app is made up of only two objecst: todoApp and todoItem.
+This app is made up of only two objects: todoApp and todoItem.
 
-todoApp combines all the methods that are useful for working with the app.  It creates and appends new tasks to the DOM and also retrieves an array of funished and unfinished tasks.
+todoApp combines all the methods that are useful for working with the app.  It creates and appends new tasks to the DOM and also retrieves an array of finished and unfinished tasks.
 
 todoItem constructs the actual DOM element to represent a task.  The methods that return a 'complete' and 'delete' buttons also bind a function that handles the click events for those buttons.  The render method returns a DOM object containing the task and the two buttons.
 
@@ -42,9 +42,9 @@ Build out the starter DOM structure in index.html:
     - An input field with the 'new-task-field' id for getting user input
     - A button with an 'add-item' id for submitting a new task
     - An orderd list with a 'todo-items' id for holding new tasks
-  - A div with an 'unfinished' id for completed tasks, containing:
+  - A div with an 'finished' id for completed tasks, containing:
     - An unordered list with a 'completed-items' id for holding completed tasks
-    
+
 #####Step 2:
 
 Build out the starting structure of the javascript app in src/todo.js:
@@ -70,7 +70,7 @@ Implement the basic add item functionality:
 - Implement the necessary todoItem methods:
   - setTaskText method to set the taskName attribute
   - render method to return an 'li' element with a div for holding the task text
-  
+
 #####Step 4:
 
 Implement the complete button
@@ -81,7 +81,7 @@ Implement the complete button
   - set the onclick function to do some DOM manipulation:
     - (remember to save a reference to the todoItem 'this' in the function's scope by storing it in a variable)
     - remove the task from 'todo-items' and append it to 'completed-items'
-    
+
 #####Step 5:
 
 Implement the delete button
@@ -92,7 +92,7 @@ Implement the delete button
   - set the onclick function to do some DOM manipulation:
     - (remember to save a reference to the todoItem 'this' in the function's scope by storing it in a variable)
     - remove the task from the DOM
-    
+
 #####Step 6 (Optional):
 
 You may want to refactor some code, add helper methods to clean up the repeated parts or abstract out some parts, and add styling by adding css classes.
