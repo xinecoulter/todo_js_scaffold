@@ -62,7 +62,7 @@ Implement the basic add item functionality:
 - Add an onclick event handler that will call a todoApp createTask method and input from the 'new-task-field' field as an argument
 - Implement the todoApp createTask method to:
   - create a new instance of a todoItem object
-  - Use the new task objects setTaskText method to set the task text from the argument
+  - Use the new task object's setTaskText method to set the task text from the argument
   - call the todoApp appendTask method passing the new task object as an argument
 - Implement the todoApp appendTask method to:
   - check that the new task name isn't blank
