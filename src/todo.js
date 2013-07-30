@@ -24,6 +24,7 @@ var todoItem = {
     var taskButtons = document.createElement("div");
     taskButtons.className = "task-buttons";
     taskButtons.appendChild(this.completedButton());
+    taskButtons.appendChild(this.deleteButton());
     document.getElementById("todo-items").appendChild(liTag);
     liTag.appendChild(taskText);
     taskText.appendChild(taskButtons);
@@ -42,6 +43,18 @@ var todoItem = {
       document.getElementById("completed-items").appendChild(associatedTask);
     };
     return completeButton;
+  },
+  deleteButton: function() {
+    var deleteButton = document.createElement("button");
+    deleteButton.className = "delete-button";
+    deleteButton.innerHTML = "delete";
+    var that = this;
+    deleteButton.onclick = function(event) {
+      var button = event.target;
+      var associatedTask = that.getTask(event);
+      associatedTask.parentNode.removeChild(associatedTask);
+    };
+    return deleteButton;
   },
   getTask: function(event) {
     return event.target.parentNode.parentNode.parentNode;
