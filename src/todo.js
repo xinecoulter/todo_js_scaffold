@@ -23,9 +23,28 @@ var todoItem = {
     taskText.className = "task-text";
     var taskButtons = document.createElement("div");
     taskButtons.className = "task-buttons";
+    taskButtons.appendChild(this.completedButton());
     document.getElementById("todo-items").appendChild(liTag);
     liTag.appendChild(taskText);
     taskText.appendChild(taskButtons);
+
+    return liTag;
+  },
+  completedButton: function() {
+    var completeButton = document.createElement("button");
+    completeButton.className = "complete-button";
+    completeButton.innerHTML = "completed";
+    var that = this;
+    completeButton.onclick = function(event) {
+      var button = event.target;
+      var associatedTask = document.getElementById("todo-items").removeChild(that.getTask(event));
+      completeButton.parentNode.removeChild(completeButton);
+      document.getElementById("completed-items").appendChild(associatedTask);
+    };
+    return completeButton;
+  },
+  getTask: function(event) {
+    return event.target.parentNode.parentNode.parentNode;
   }
 };
 
