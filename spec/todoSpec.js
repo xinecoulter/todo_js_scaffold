@@ -13,4 +13,8 @@ describe("todoItem", function() {
   it("should have a method deleteButton that returns a button", function() {
     expect(todoItem.deleteButton().nodeName).toBe("BUTTON");
   });
+
+  it("should have a method clearButton that returns a button", function() {
+    expect(todoApp.clearButton().nodeName).toBe("BUTTON");
+  });
 });

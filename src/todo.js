@@ -56,6 +56,11 @@ var todoItem = {
     };
     return deleteButton;
   },
+  clearButton: function() {
+    var clearButton = document.createElement("button");
+    clearButton.className = "clear-button";
+    clearButton.innerHTML = "clear";
+  },
   getTask: function(event) {
     return event.target.parentNode.parentNode.parentNode;
   }
